@@ -89,7 +89,7 @@ def index(request):
         recipient = ['stockcheck223@gmail.com']
         send_mail(subject, message, frommail, recipient)
     else:
-        subject = 'StockCheckアプリから通知'
+        subject = 'StockCheckアプリから通知%s'%today
         message = '賞味期限の近い商品はありません。\n サイトhttp://naonaonao12179.pythonanywhere.com/admin/ \n 更新、チェックhttp://naonaonao12179.pythonanywhere.com/stockcheck/'
         frommail = []
         recipient = ['stockcheck223@gmail.com']
