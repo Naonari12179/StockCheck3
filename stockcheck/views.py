@@ -84,13 +84,13 @@ def index(request):
             expiredlist8 = expiredlist8
     if len(expiredlist1) > 0 or len(expiredlist2)>0 or len(expiredlist3)>0 or len(expiredlist4)>0 or len(expiredlist5)>0 or len(expiredlist6)>0 or len(expiredlist7)>0 or len(expiredlist8)>0:
         subject = 'StockCheckアプリから通知 %s'%today
-        message = '賞味期限の近い商品があります。\n お菓子鵜沢さん(3週間以内):%s　\n お菓子福地さん(3週間以内):%s \n お菓子(3週間以内):%s \n 半生お菓子(10日以内):%s \n チーズ(1週間以内):%s \n 洋日配(3日以内):%s \n 飲料(2週間以内):%s \n お酒(1月以内):%s \n サイトhttp://127.0.0.1:8000/admin/' % (expiredlist1,expiredlist2, expiredlist3, expiredlist4, expiredlist5, expiredlist6, expiredlist7, expiredlist8)
+        message = '賞味期限の近い商品があります。\n お菓子鵜沢さん(3週間以内):%s　\n お菓子福地さん(3週間以内):%s \n お菓子(3週間以内):%s \n 半生お菓子(10日以内):%s \n チーズ(1週間以内):%s \n 洋日配(3日以内):%s \n 飲料(2週間以内):%s \n お酒(1月以内):%s \n サイトhttp://naonaonao12179.pythonanywhere.com/admin/ \n 更新、チェックhttp://naonaonao12179.pythonanywhere.com/stockcheck/' % (expiredlist1,expiredlist2, expiredlist3, expiredlist4, expiredlist5, expiredlist6, expiredlist7, expiredlist8)
         frommail = []
         recipient = ['stockcheck223@gmail.com']
         send_mail(subject, message, frommail, recipient)
     else:
         subject = 'StockCheckアプリから通知'
-        message = '賞味期限の近い商品はありません。'
+        message = '賞味期限の近い商品はありません。\n サイトhttp://naonaonao12179.pythonanywhere.com/admin/ \n 更新、チェックhttp://naonaonao12179.pythonanywhere.com/stockcheck/'
         frommail = []
         recipient = ['stockcheck223@gmail.com']
         send_mail(subject, message, frommail, recipient)
